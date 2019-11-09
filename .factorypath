@@ -44,7 +44,6 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/webflow/spring-js/2.3.3.RELEASE/spring-js-2.3.3.RELEASE.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/springframework/webflow/spring-js-resources/2.3.3.RELEASE/spring-js-resources-2.3.3.RELEASE.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/projectlombok/lombok/1.18.10/lombok-1.18.10.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/postgresql/postgresql/9.1-901-1.jdbc4/postgresql-9.1-901-1.jdbc4.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/postgresql/postgresql/42.2.1/postgresql-42.2.1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/mysql/mysql-connector-java/5.0.5/mysql-connector-java-5.0.5.jar" enabled="true" runInBatchMode="false"/>
 </factorypath>
