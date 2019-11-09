@@ -1,29 +1,29 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+/target/
+!.mvn/wrapper/maven-wrapper.jar
 
-# Folder config file
-Desktop.ini
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-target/
-
-# IDE configurations
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
-.settings/
-.idea/
+*.ipr
 
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+#ignore local properties file.
+src/main/resources/application-local.properties
+src/main/resources/application-local.yml
