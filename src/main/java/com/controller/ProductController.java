@@ -85,8 +85,7 @@ public class ProductController {
 
 		// Here the Path class is used to refer the path of the file
 
-		Path path = Paths.get("C:/Users/Ismail/workspace/ShoppingCart/src/main/webapp/WEB-INF/resource/images/products/"
-				+ productId + ".jpg");
+		Path path = Paths.get("C:/Users/pankaj kumar/Desktop/images/" + productId + ".jpg");
 
 		if (Files.exists(path)) {
 			try {
@@ -121,9 +120,7 @@ public class ProductController {
 		productService.addProduct(product);
 		MultipartFile image = product.getProductImage();
 		if (image != null && !image.isEmpty()) {
-			Path path = Paths
-					.get("C:/Users/Ismail/workspace/ShoppingCart/src/main/webapp/WEB-INF/resource/images/products/"
-							+ product.getProductId() + ".jpg");
+			Path path = Paths.get("C:/Users/pankaj kumar/Desktop/images/" + product.getProductId() + ".jpg");
 
 			try {
 				image.transferTo(new File(path.toString()));

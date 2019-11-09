@@ -10,14 +10,35 @@
         http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd">
 
 	<!-- database properties DataSource -->
-	<bean id="dataSource"
+	<!-- <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.h2.Driver" />
 		<property name="url" value="jdbc:h2:tcp://localhost/~/ecommerce" />
 		<property name="username" value="sa" />
 		<property name="password" value="" />
+	</bean> -->
+	<!-- <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/ecommerce" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean> -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://ec2-174-129-253-63.compute-1.amazonaws.com:5432/detqfq45opi3nn?sslmode=require" />
+		<property name="username" value="somgejjftxagoq" />
+		<property name="password" value="33ba482f18bf49d3fc590faebe29750908dc15eb4ad2fa76c4e4f9a268e66bba" />
 	</bean>
-
+	<!-- <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://remotemysql.com/YmH9ItAOhW" />
+		<property name="username" value="YmH9ItAOhW" />
+		<property name="password" value="TADgk81gj8" />
+	</bean> -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 
@@ -25,7 +46,9 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop> -->
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop> -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
 
 				<!-- hibernate mapping to database automatically -->
 				<!-- when we use create-drop instead of update the table is created automatically 

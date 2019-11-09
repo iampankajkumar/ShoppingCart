@@ -16,56 +16,25 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Setter
+@Getter
 @Table(name = "cart")
 public class Cart implements Serializable {
 
 	private static final long serialVersionUID = 8436097833452420298L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String cartId;
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long cartId;
 	@OneToOne
 	@JoinColumn(name = "customerId")
 	@JsonIgnore
 	private Customer customer;
-
-	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<CartItem> cartItem;
-
 	private double totalPrice;
-
-	public String getCartId() {
-		return cartId;
-	}
-
-	public void setCartId(String cartId) {
-		this.cartId = cartId;
-	}
-
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-
-	public List<CartItem> getCartItem() {
-		return cartItem;
-	}
-
-	public void setCartItem(List<CartItem> cartItem) {
-		this.cartItem = cartItem;
-	}
-
-	public double getTotalPrice() {
-		return totalPrice;
-	}
-
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-
 }

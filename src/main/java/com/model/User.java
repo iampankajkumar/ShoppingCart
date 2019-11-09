@@ -9,59 +9,22 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Setter
+@Getter
 @Table(name = "users")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 2681531852204068105L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String userId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long userId;
 	private String emailId;
 	private String password;
 	private boolean enabled;
-
 	@OneToOne(mappedBy = "users")
 	private Customer customer;
-
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public boolean isEnabled() {
-		return enabled;
-	}
-
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
-
-	public String getEmailId() {
-		return emailId;
-	}
-
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
-	}
-
 }

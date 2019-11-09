@@ -14,15 +14,20 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Setter
+@Getter
 @Table(name = "customer")
 public class Customer implements Serializable {
 
 	private static final long serialVersionUID = 2652327633296064143L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String customerId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long customerId;
 	private String firstName;
 	private String lastName;
 	private String customerPhone;
@@ -43,69 +48,5 @@ public class Customer implements Serializable {
 	@JoinColumn(name = "cartId")
 	@JsonIgnore
 	private Cart cart;
-
-	public BillingAddress getBillingAddress() {
-		return billingAddress;
-	}
-
-	public void setBillingAddress(BillingAddress billingAddress) {
-		this.billingAddress = billingAddress;
-	}
-
-	public Cart getCart() {
-		return cart;
-	}
-
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
-
-	public String getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(String custmerId) {
-		this.customerId = custmerId;
-	}
-
-	public String getCustomerPhone() {
-		return customerPhone;
-	}
-
-	public void setCustomerPhone(String customerPhone) {
-		this.customerPhone = customerPhone;
-	}
-
-	public ShippingAddress getShippingAddress() {
-		return shippingAddress;
-	}
-
-	public void setShippingAddress(ShippingAddress shippingAddress) {
-		this.shippingAddress = shippingAddress;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public User getUsers() {
-		return users;
-	}
-
-	public void setUsers(User users) {
-		this.users = users;
-	}
 
 }

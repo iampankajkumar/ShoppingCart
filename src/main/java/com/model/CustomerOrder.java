@@ -10,15 +10,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Setter
+@Getter
 @Table(name = "customerorder")
 public class CustomerOrder implements Serializable {
 
 	private static final long serialVersionUID = -6571020025726257848L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String customerOrderId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long customerOrderId;
 
 	@OneToOne
 	@JoinColumn(name = "cartId")
@@ -35,45 +40,5 @@ public class CustomerOrder implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "billingAddressId")
 	private BillingAddress billingAddress;
-
-	public BillingAddress getBillingAddress() {
-		return billingAddress;
-	}
-
-	public void setBillingAddress(BillingAddress billingAddress) {
-		this.billingAddress = billingAddress;
-	}
-
-	public String getCustomerOrderId() {
-		return customerOrderId;
-	}
-
-	public void setCustomerOrderId(String customerOrderId) {
-		this.customerOrderId = customerOrderId;
-	}
-
-	public Cart getCart() {
-		return cart;
-	}
-
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
-
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-
-	public ShippingAddress getShippingAddress() {
-		return shippingAddress;
-	}
-
-	public void setShippingAddress(ShippingAddress shippingAddress) {
-		this.shippingAddress = shippingAddress;
-	}
 
 }
