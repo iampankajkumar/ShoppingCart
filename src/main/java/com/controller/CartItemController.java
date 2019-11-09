@@ -70,7 +70,7 @@ public class CartItemController {
 
 	@RequestMapping("/cart/add/{productId}")
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
-	public void addCartItem(@PathVariable(value = "productId") String productId) {
+	public void addCartItem(@PathVariable(value = "productId") Long productId) {
 		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String emailId = user.getUsername();
 		Customer customer = customerService.getCustomerByemailId(emailId);
